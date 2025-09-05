@@ -98,7 +98,7 @@ export default function BusinessSupport() {
                 src="./img.jpeg" 
                 alt="Architectural curve"
               />
-              <div className="bs__badge">New</div>
+       
               <img
                 className="bs__collage-fore"
                 src="./img1.jpeg"
