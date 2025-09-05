@@ -1,25 +1,58 @@
-import logo from './logo.svg';
-import './App.css';
 
-function App() {
+import React from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import Homepage from './pages/Homepage';
+
+
+
+
+
+
+
+
+// NEW: Scroll to #section if hash exists
+const ScrollToHashElement = () => {
+  const location = useLocation();
+
+  React.useEffect(() => {
+    if (location.hash) {
+      const el = document.querySelector(location.hash);
+      if (el) {
+        setTimeout(() => {
+          el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }, 200); // Timeout ensures DOM is ready
+      }
+    }
+  }, [location]);
+
+  return null;
+};
+
+
+const ScrollToTop = () => {
+  const { pathname } = useLocation();
+  React.useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+};
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+
+      <ScrollToTop />
+      <ScrollToHashElement />
+      <Routes>
+
+        <Route path='/' element={<Homepage />} />
+      
+
+
+
+      </Routes>
+    </>
   );
-}
+};
 
 export default App;
