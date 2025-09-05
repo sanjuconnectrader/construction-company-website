@@ -134,7 +134,7 @@ export default function Footer() {
             <div className="Footer__copyright">
               <p>© {year}  Construction Company. All rights reserved.</p>
               <p className="Footer__statement">
-                Turner is an Equal Opportunity Employer – race, color, religion, sex, sexual
+               construction is an Equal Opportunity Employer – race, color, religion, sex, sexual
                 orientation, gender identity, national origin, disability, status as a
                 protected veteran, or other characteristics protected by applicable law.
               </p>
