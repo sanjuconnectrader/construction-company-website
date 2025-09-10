@@ -1,0 +1,248 @@
+/* About Hero Section Styles */
+.about-hero {
+  position: relative;
+  height: 60vh;
+  min-height: 600px;
+  max-height: 900px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg);
+}
+
+/* Background Image with Parallax Effect */
+.about-hero-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+}
+
+.about-hero-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scale(1.1);
+  transition: transform 1.5s ease-out, opacity 1.5s ease-out;
+  opacity: 0;
+  filter: brightness(0.7);
+}
+
+.about-hero-img.loaded {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(10, 20, 15, 0.6);
+  z-index: 2;
+}
+
+.gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    rgba(15, 95, 67, 0.4) 0%,
+    rgba(10, 71, 48, 0.6) 100%
+  );
+  z-index: 3;
+}
+
+/* Content Styling */
+.about-hero-content {
+  position: relative;
+  z-index: 4;
+  text-align: center;
+  max-width: 800px;
+  padding: 0 var(--container-padding);
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease-out, transform 1s ease-out;
+}
+
+.about-hero-content.loaded {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-hero-title {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 700;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.5px;
+}
+
+.title-line {
+  display: block;
+}
+
+.about-hero-title .title-line:nth-child(2) {
+  color: var(--accent);
+}
+
+.about-hero-description {
+  font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+  margin-bottom: 2.5rem;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* CTA Buttons */
+.about-hero-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-button {
+  padding: 1rem 2rem;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 1rem;
+  transition: var(--transition);
+  cursor: pointer;
+  border: 2px solid transparent;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.cta-button.primary {
+  background-color: var(--accent);
+  color: var(--primary-dark);
+  box-shadow: var(--shadow);
+}
+
+.cta-button.primary:hover {
+  background-color: var(--accent-light);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-glow);
+}
+
+.cta-button.secondary {
+  background-color: transparent;
+  color: var(--bg);
+  border-color: var(--bg);
+}
+
+.cta-button.secondary:hover {
+  background-color: var(--bg);
+  color: var(--primary);
+  transform: translateY(-3px);
+  box-shadow: var(--shadow);
+}
+
+/* Bottom Curve */
+.about-hero-curve {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 120px;
+  z-index: 5;
+}
+
+.curve-svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.shape-fill {
+  fill: var(--bg);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .about-hero {
+    min-height: 500px;
+    height: 80vh;
+  }
+  
+  .about-hero-title {
+    font-size: clamp(2rem, 6vw, 3rem);
+  }
+  
+  .about-hero-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-button {
+    width: 100%;
+    max-width: 280px;
+  }
+  
+  .about-hero-curve {
+    height: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-hero {
+    height: 70vh;
+    min-height: 450px;
+  }
+  
+  .about-hero-title {
+    margin-bottom: 1rem;
+  }
+  
+  .about-hero-description {
+    margin-bottom: 2rem;
+  }
+  
+  .cta-button {
+    padding: 0.875rem 1.5rem;
+  }
+  
+  .about-hero-curve {
+    height: 60px;
+  }
+}
+
+/* Animation for elements */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.about-hero-content.loaded .about-hero-title span {
+  display: inline-block;
+  animation: fadeInUp 0.8s ease forwards;
+}
+
+.about-hero-content.loaded .about-hero-title span:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.about-hero-content.loaded .about-hero-description {
+  animation: fadeInUp 0.8s ease 0.4s forwards;
+}
+
+.about-hero-content.loaded .about-hero-actions {
+  animation: fadeInUp 0.8s ease 0.6s forwards;
+}

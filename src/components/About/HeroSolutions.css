@@ -1,0 +1,105 @@
+/* wrapper */
+.hs-hero {
+  position: relative;
+  width: 100%;
+  min-height: 78vh;
+  display: block;
+  overflow: hidden;
+  color: #ffffff;
+  font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* background image + overlay */
+.hs-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+.hs-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hs-overlay {
+  position: absolute;
+  inset: 0;
+  /* darker on the right to match the reference */
+  background: linear-gradient(
+    90deg,
+    rgba(0,0,0,.20) 0%,
+    rgba(0,0,0,.35) 45%,
+    rgba(0,0,0,.70) 70%,
+    rgba(0,0,0,.80) 100%
+  );
+}
+
+/* content */
+.hs-content {
+  position: relative;
+  z-index: 1;
+  min-height: 78vh;
+  max-width: 640px;
+  margin-left: auto;                             /* push to the right */
+  margin-right: clamp(16px, 6vw, 72px);
+  padding: clamp(16px, 3vw, 28px) 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 18px;
+  text-align: left;
+}
+
+.hs-icon {
+  color: #ffffff;
+  opacity: .95;
+  display: inline-flex;
+}
+
+.hs-title {
+  margin: 0;
+  font-weight: 800;
+  line-height: 1.05;
+  letter-spacing: .2px;
+  font-size: clamp(2rem, 4.2vw + .4rem, 4.2rem);  /* big two-line */
+}
+
+.hs-desc {
+  margin: 4px 0 4px;
+  font-size: clamp(1rem, 1.1vw + .6rem, 1.2rem);
+  line-height: 1.8;
+  opacity: .95;
+  max-width: 60ch;
+}
+
+.hs-cta {
+  align-self: flex-start;
+  background: #ff7a00;   /* CTA orange */
+  color: #ffffff;
+  border: none;
+  border-radius: 6px;
+  padding: 14px 22px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: transform .2s ease, box-shadow .2s ease, opacity .2s ease;
+}
+.hs-cta:hover { transform: translateY(-2px); box-shadow: 0 10px 24px rgba(0,0,0,.2); }
+.hs-cta:active { transform: none; opacity: .95; }
+
+/* responsive */
+@media (max-width: 900px) {
+  .hs-content {
+    max-width: 680px;
+    margin-right: clamp(16px, 4vw, 40px);
+  }
+}
+
+@media (max-width: 700px) {
+  .hs-hero { min-height: 66vh; }
+  .hs-content {
+    margin: 0 auto;
+    padding: 24px 18px 32px;
+  }
+  .hs-icon svg { width: 46px; height: 46px; }
+  .hs-cta { padding: 12px 18px; }
+}

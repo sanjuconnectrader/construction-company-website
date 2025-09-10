@@ -2,6 +2,9 @@
 import React from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Homepage from './pages/Homepage';
+import Aboutuspage from './pages/Aboutuspage';
+import Projectpage from './pages/Projectpage';
+import Contactpage from './pages/Contactpage';
 
 
 
@@ -46,7 +49,10 @@ const App = () => {
       <Routes>
 
         <Route path='/' element={<Homepage />} />
-      
+        <Route path='/about-us' element={<Aboutuspage />} />
+        <Route path='/projects' element={<Projectpage />} />
+        <Route path='/contact' element={<Contactpage/>} />
+
 
 
 

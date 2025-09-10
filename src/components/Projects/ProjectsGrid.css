@@ -1,0 +1,114 @@
+:root{
+  --ink:#0e2030;
+  --muted:#6b7a86;
+  --bg:#fff;
+  --card-radius:10px;
+}
+
+.pg-wrap{
+  background:var(--bg);
+  color:var(--ink);
+  padding: 48px 20px 84px;
+  max-width:1240px;
+  margin:0 auto;
+  font-family:"Inter", system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Grid */
+.pg-grid{
+  display:grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap:48px 40px;
+  margin-top: 90px;
+}
+
+/* Card */
+.pg-card{ display:flex; flex-direction:column; }
+
+.pg-cat{
+  font-size:.85rem;
+  color:var(--muted);
+  margin:0 0 10px 0;
+}
+
+.pg-thumb{
+  display:block;
+  width:100%;
+  aspect-ratio: 16/11;          /* close to screenshot proportion */
+  border-radius: var(--card-radius);
+  overflow:hidden;
+  background:#eef2f6;
+  box-shadow: 0 1px 0 rgba(0,0,0,.04);
+}
+.pg-thumb img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+  transition: transform .35s ease;
+}
+.pg-thumb:hover img{ transform: scale(1.03); }
+
+.pg-meta{
+  margin:10px 0 6px;
+  color:var(--muted);
+  font-size:.86rem;
+}
+
+.pg-title{
+  margin:0;
+  font-size:1.05rem;
+  line-height:1.45;
+  font-weight:600;
+  letter-spacing:.1px;
+}
+
+/* Footer / Pager */
+.pg-footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:16px;
+  border-top:1px solid rgba(14,32,48,.08);
+  margin-top:56px;
+  padding-top:18px;
+}
+
+.pg-pages{ display:flex; gap:8px; }
+.pg-page{
+  background:transparent;
+  border:none;
+  color:#8c97a3;
+  font-size:.8rem;
+  padding:6px;
+  border-radius:6px;
+  cursor:pointer;
+}
+.pg-page.is-active{ color:#151b22; font-weight:700; }
+
+.pg-next{
+  margin-left:auto;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  background:transparent;
+  color:#151b22;
+  border:none;
+  font-size:.8rem;
+  letter-spacing:.08em;
+  cursor:pointer;
+}
+.pg-next svg{ width:18px; height:18px; }
+
+/* Responsive */
+@media (max-width: 1100px){
+  .pg-grid{ grid-template-columns: repeat(3, 1fr); gap:40px 28px; }
+}
+@media (max-width: 800px){
+  .pg-grid{ grid-template-columns: repeat(2, 1fr); gap:36px 24px; }
+}
+@media (max-width: 520px){
+  .pg-wrap{ padding:32px 16px 72px; }
+  .pg-grid{ grid-template-columns: 1fr; gap:28px; }
+  .pg-footer{ flex-direction:column; align-items:flex-start; gap:10px; }
+}
