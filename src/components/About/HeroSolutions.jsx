@@ -7,7 +7,7 @@ export default function HeroSolutions() {
       {/* Background */}
       <div className="hs-bg">
         <img
-          src="https://images.pexels.com/photos/3862372/pexels-photo-3862372.jpeg?auto=compress&cs=tinysrgb&w=1920"
+          src="./abb.webp"
           alt="Engineers reviewing building plans at a construction site"
           loading="eager"
         />

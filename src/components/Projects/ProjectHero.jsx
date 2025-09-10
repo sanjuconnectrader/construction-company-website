@@ -5,17 +5,17 @@ const SLIDES = [
   {
     city: "Memphis, Tennessee",
     title: "City of Memphis, Lester Community Center",
-    img: "https://images.pexels.com/photos/313782/pexels-photo-313782.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    img: "./pr.jpeg",
   },
   {
     city: "Seattle, Washington",
     title: "Northlake Innovation Hub & Waterfront Plaza",
-    img: "https://images.pexels.com/photos/1707823/pexels-photo-1707823.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    img: "pr1.jpeg",
   },
   {
     city: "Austin, Texas",
     title: "Eastside Transit Terminal & Mixed-Use Campus",
-    img: "https://images.pexels.com/photos/256150/pexels-photo-256150.jpeg?auto=compress&cs=tinysrgb&w=1920",
+    img: "./pr2.jpeg",
   },
 ];
 

@@ -29,7 +29,7 @@ export default function ConsultingSection() {
         <article className="cs-card">
           <div className="cs-photo">
             <img
-              src="https://images.pexels.com/photos/1216589/pexels-photo-1216589.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              src="./ab3.jpeg"
               alt="Construction team collaborating on site"
             />
           </div>
@@ -40,7 +40,7 @@ export default function ConsultingSection() {
         <article className="cs-card">
           <div className="cs-photo">
             <img
-              src="https://images.pexels.com/photos/280015/pexels-photo-280015.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              src="./ab.webp"
               alt="Tower crane at construction project"
             />
           </div>
@@ -51,7 +51,7 @@ export default function ConsultingSection() {
         <article className="cs-card">
           <div className="cs-photo">
             <img
-              src="https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              src="./ab1.webp"
               alt="Engineers planning with documents"
             />
           </div>
@@ -62,7 +62,7 @@ export default function ConsultingSection() {
         <article className="cs-card">
           <div className="cs-photo">
             <img
-              src="https://images.pexels.com/photos/323780/pexels-photo-323780.jpeg?auto=compress&cs=tinysrgb&w=1600"
+              src="./ab4.webp"
               alt="Modern building facade with glass"
             />
           </div>
