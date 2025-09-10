@@ -13,7 +13,7 @@ export default function Abouthero() {
       {/* Background Image with Parallax Effect */}
       <div className="about-hero-bg">
         <img
-          src="https://images.pexels.com/photos/585419/pexels-photo-585419.jpeg?auto=compress&cs=tinysrgb&w=1600"
+          src="./abhero.jpeg"
           alt="Construction professionals collaborating on site"
           className={`about-hero-img ${isLoaded ? 'loaded' : ''}`}
         />
